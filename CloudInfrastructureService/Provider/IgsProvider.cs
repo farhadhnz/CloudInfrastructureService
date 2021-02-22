@@ -6,20 +6,11 @@ using System.Text;
 
 namespace CloudInfrastructureService.Provider
 {
-    public class IgsProvider : ProviderBase, IProvider
+    public class IgsProvider : Provider
     {
-        public void CreateResource(string address, IResource resource, string infrastructureName, ISubResource subResource)
+        protected override string GetProviderName()
         {
-            // Check if provider folder exists and create if not
-            var providerPath = $"{address}/IGS/";
-            CheckCreateFolder(providerPath);
-
-            // Check if infrastructure folder exists and create if not
-            var infrastructurePath = $"{address}/IGS/{infrastructureName}";
-            CheckCreateFolder(infrastructurePath);
-
-            // Create Resource Instance
-            resource.Create(infrastructurePath, subResource);
+            return "IGS";
         }
     }
 }
