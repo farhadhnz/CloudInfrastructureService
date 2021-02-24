@@ -4,7 +4,7 @@
     {
         protected override string CreateSubResourceContent()
         {
-            return "{ content: value}";
+            return "{ type: SQLDatabaseServer }";
         }
     }
 }
